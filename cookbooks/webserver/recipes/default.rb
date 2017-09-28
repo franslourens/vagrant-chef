@@ -117,13 +117,13 @@ execute "Laravel Cache Permissions" do
   action :run
 end
 
-execute "Laravel Project Key" do
-  user "vagrant"
-  cwd "/var/www/laravel"
-  command "php artisan key:generate"
-  user "vagrant"
-  action :run
-end
+#execute "Laravel Project Key" do
+#  user "vagrant"
+#  cwd "/var/www/laravel"
+#  command "php artisan key:generate"
+#  user "vagrant"
+#  action :run
+#end
 
 execute "Restart PHP fpm" do
    command "systemctl restart php7.0-fpm"
