@@ -94,10 +94,21 @@ execute "Install Laravel" do
   action :run
 end
 
-execute "Laravel Env" do
-	not_if "test -f /var/www/laravel/.env"
-	user "vagrant"
-    command "mv /var/www/laravel/.env.example /var/www/laravel/.env"    
+template "/var/www/laravel/.env" do
+        source "env.erb"
+        owner "vagrant"
+        group "www-data"
+        mode 0755
+		variables({
+			"name": "Laravel",
+			"env": "local",
+			"key": "nVlXjRaQky9gPuKBodII6+Ria86+CIYHpY2TDTq9u9o=",
+			"url": "http://localhost",
+			"mysql_host": "127.0.0.1",
+			"mysql_database": "webserver",
+			"mysql_username": "root",
+			"mysql_password": "webserver",
+		})
 end
 
 execute "Laravel Cache Permissions" do
