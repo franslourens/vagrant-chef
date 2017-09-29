@@ -111,6 +111,13 @@ template "/var/www/laravel/.env" do
 		})
 end
 
+template "/var/www/laravel/resources/views/welcome.blade.php" do
+        source "welcome.blade.php"
+        owner "vagrant"
+        group "www-data"
+        mode 0755
+end
+
 execute "Laravel Cache Permissions" do
   user "vagrant"
   command "chmod 777 -R /var/www/laravel/bootstrap/cache /var/www/laravel/storage"
