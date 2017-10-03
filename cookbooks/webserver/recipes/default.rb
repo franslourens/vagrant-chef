@@ -81,6 +81,7 @@ git "/var/www/laravel" do
   not_if "test -d /var/www/laravel"
   user "vagrant"
   group "www-data"
+  #repository "https://github.com/franslourens/anihowdb.git"
   repository "https://github.com/laravel/laravel.git"
   reference "master"
   action :sync
