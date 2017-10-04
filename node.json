@@ -1,0 +1,4 @@
+{
+    "foo": "bar",
+	"run_list" : ["recipe[nginx-loadbalancer]"] 
+}

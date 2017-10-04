@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.box = 'bento/ubuntu-16.04'
+  config.vm.synced_folder "/var/www/Vagrant/chef", "/opt/chef/chef-solo"
   config.vm.network :private_network, type: 'dhcp'
 
   config.vm.provider :virtualbox do |vb|

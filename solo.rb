@@ -1,4 +1,3 @@
-file_cache_path "/vagrant/chef-solo"
-cookbook_path "/vagrant/chef/cookbooks/"
-role_path "/vagrant/chef-solo/roles"
-json_attribs "/vagrant/chef-solo/node.json"
+#These are directories inside the vagrant box
+cookbook_path "/opt/chef/chef-solo/cookbooks"
+json_attribs "/opt/chef/chef-solo/node.json"
